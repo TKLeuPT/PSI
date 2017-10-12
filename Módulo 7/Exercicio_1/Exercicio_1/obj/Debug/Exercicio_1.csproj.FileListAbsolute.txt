@@ -1,0 +1,10 @@
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.exe.config
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.exe
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.pdb
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.csprojResolveAssemblyReference.cache
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.Form1.resources
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.Properties.Resources.resources
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.csproj.GenerateResource.Cache
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.csproj.CoreCompileInputs.cache
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.exe
+D:\Stuff\Programação\Módulo 7\Exercicio 1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.pdb

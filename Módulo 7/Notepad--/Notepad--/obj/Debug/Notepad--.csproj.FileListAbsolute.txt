@@ -1,0 +1,9 @@
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\bin\Debug\Notepad--.exe.config
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\bin\Debug\Notepad--.exe
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\bin\Debug\Notepad--.pdb
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\obj\Debug\Notepad__.Form1.resources
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\obj\Debug\Notepad__.Properties.Resources.resources
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\obj\Debug\Notepad--.csproj.GenerateResource.Cache
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\obj\Debug\Notepad--.csproj.CoreCompileInputs.cache
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\obj\Debug\Notepad--.exe
+D:\Stuff\Programação\Módulo 7\Notepad--\Notepad--\Notepad--\obj\Debug\Notepad--.pdb

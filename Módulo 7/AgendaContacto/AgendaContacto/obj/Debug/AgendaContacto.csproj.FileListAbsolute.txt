@@ -1,0 +1,12 @@
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\bin\Debug\AgendaContacto.exe.config
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\bin\Debug\AgendaContacto.exe
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\bin\Debug\AgendaContacto.pdb
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.csprojResolveAssemblyReference.cache
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.Form1.resources
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.Properties.Resources.resources
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.csproj.GenerateResource.Cache
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.csproj.CoreCompileInputs.cache
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.exe
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.pdb
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.Inicio.resources
+D:\Stuff\Programação\Módulo 7\AgendaContactos\AgendaContacto\AgendaContacto\obj\Debug\AgendaContacto.Listagem.resources
