@@ -1,0 +1,12 @@
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.exe.config
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.exe
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.pdb
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.csprojResolveAssemblyReference.cache
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.exe
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.pdb
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.exe.config
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.exe
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\bin\Debug\Exercicio_1.pdb
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.csprojResolveAssemblyReference.cache
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.exe
+C:\Users\leona\Documents\GitHub\PSI\Módulo 6\Exercicio_1\Exercicio_1\obj\Debug\Exercicio_1.pdb
