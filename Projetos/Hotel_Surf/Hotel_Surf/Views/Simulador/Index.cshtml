@@ -1,0 +1,108 @@
+﻿<h2>Calcular Estadia</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Reservado, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <label class="control-label col-md-3">Calcular uma reserva já criada.</label>
+
+        <div class="col-md-9">
+            <div class="checkbox">
+                @Html.CheckBox("reservascbox", false)
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            @Html.DropDownList("ddlReservas", new List<SelectListItem>() { new SelectListItem() { Text = "", Value = "" } }, htmlAttributes: new { @class = "form-control" })
+
+        </div>
+
+    </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.Label("Nº de Adultos", htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.Editor("NumAdultos", new { htmlAttributes = new { @class = "form-control" } })
+
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        @Html.Label("Nº de Crianças", htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.Editor("NumCriancas", new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Data de Entrada", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.Editor("DatEntrada", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        @Html.Label("Data de Saída", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.Editor("DatSaida", new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+
+            @Html.Label("Número do Bungalow", htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.Editor("NumBungalow", new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+            </div>
+        </div>*@
+
+    <div class="form-group">
+
+        @Html.Label("Preço do Bungalow", htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.Editor("PrecoBungalow", new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+        </div>
+    </div>
+    <div class="form-group">
+
+        @Html.Label("Preço da Estadia", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.Label("0,00€", htmlAttributes: new { @class = "control-label col-md-2", @id="totalLbl" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <button class="btn btn-default" id="calc" type="button">Calcular</button>
+        </div>
+    </div>
+
+
+</div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/Simulador")
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

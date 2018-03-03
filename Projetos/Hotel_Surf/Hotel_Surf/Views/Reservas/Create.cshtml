@@ -1,0 +1,111 @@
+﻿@model Hotel_Surf.Models.Reserva
+
+@{
+    ViewBag.Title = "Criar";
+}
+
+<h2>Criar</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Reserva</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.NumReserva, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Nº de Reserva</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumReserva, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumReserva, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.NumCliente, "NumCliente", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Nº de Cliente</label>
+
+            <div class="col-md-10">
+                @Html.DropDownList("NumCliente", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NumCliente, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.DatEntrada, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Data de Entrada</label>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DatEntrada, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DatEntrada, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.DatSaida, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Data de Saída</label>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DatSaida, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DatSaida, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.NumAdultos, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Nº de Adultos</label>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumAdultos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumAdultos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.NumCriancas, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Nº de Crianças</label>
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NumCriancas, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NumCriancas, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.NumBungRes, "NumBungRes", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Nº de Bungalow</label>
+
+            <div class="col-md-10">
+                @Html.DropDownList("NumBungRes", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NumBungRes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Criar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
+
+}
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

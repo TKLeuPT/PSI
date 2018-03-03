@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Hotel_Surf.Models.Cliente>
+
+@{
+    ViewBag.Title = "Início";
+}
+
+<h2>Início</h2>
+
+<p>
+    @Html.ActionLink("Criar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Título")
+        </th>
+        <th>
+            @Html.DisplayName("Nome")
+        </th>
+        <th>
+            @Html.DisplayName("Apelido")
+        </th>
+        <th>
+            @Html.DisplayName("Email")
+        </th>
+        <th>
+            @Html.DisplayName("NIF")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClTitulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClApelido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NIF)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.NumCliente }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.NumCliente }) |
+                @Html.ActionLink("Apagar", "Delete", new { id = item.NumCliente })
+            </td>
+        </tr>
+    }
+
+</table>

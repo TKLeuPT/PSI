@@ -1,0 +1,75 @@
+﻿@model Hotel_Surf.Models.Bungalow
+
+@{
+    ViewBag.Title = "Apagar";
+}
+
+<h2>Apagar</h2>
+
+<h3>Tem a certeza que deseja apagar este Bungalow?</h3>
+<div>
+    <h4>Bungalow</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.TipBung)*@
+            @Html.DisplayName("Tipo de Bungalow")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipBung)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.PrecoBung)*@
+            @Html.DisplayName("Preço do Bungalow")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecoBung)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Reservado)*@
+            @Html.DisplayName("Reservado")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reservado)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NumCamas)*@
+            @Html.DisplayName("Nº de Camas")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumCamas)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NumPessoas)*@
+            @Html.DisplayName("Nº de Pessoas")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumPessoas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

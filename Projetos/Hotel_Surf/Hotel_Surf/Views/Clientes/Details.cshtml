@@ -1,0 +1,58 @@
+﻿@model Hotel_Surf.Models.Cliente
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Título")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClTitulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Nome")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Apelido")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClApelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Email")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("NIF")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIF)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.NumCliente }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

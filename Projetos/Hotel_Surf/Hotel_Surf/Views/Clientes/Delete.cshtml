@@ -1,0 +1,75 @@
+﻿@model Hotel_Surf.Models.Cliente
+
+@{
+    ViewBag.Title = "Apagar";
+}
+
+<h2>Apagar</h2>
+
+<h3>Tem a certeza que deseja apagar este cliente?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ClTitulo)*@
+            @Html.DisplayName("Titulo")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClTitulo)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ClNome)*@
+            @Html.DisplayName("Nome")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClNome)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ClApelido)*@
+            @Html.DisplayName("Apelido")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClApelido)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ClEmail)*@
+            @Html.DisplayName("Email")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClEmail)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NIF)*@
+            @Html.DisplayName("NIF")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIF)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Apagar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

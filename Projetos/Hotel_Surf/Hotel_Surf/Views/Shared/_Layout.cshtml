@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Bukubaki</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="skin-blue fixed sidebar-mini sidebar-mini-expand-feature">
+    @*<div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Bukubaki", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contactos", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Reservas", "Index", "Reservas")</li>
+                        <li>@Html.ActionLink("Bungalows", "Index", "Bungalows")</li>
+                        <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                        <li>@Html.ActionLink("Simulador", "Index", "Simulador")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="@Url.Action("Index", "Home")" class="logo">
+
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Buku</b>Baki</span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+               
+            </div>
+
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+           
+            <ul class="sidebar-menu tree" data-widget="tree">
+                <li class="header text-center">BUKUBAKI</li>
+                <li>
+                    <a href="@Url.Action("Index","Home")">
+                        <i class="fa fa-home"></i>
+                        <span>Início</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("About","Home")">
+                        <i class="fa fa-question"></i>
+                        <span>Sobre</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Contact","Home")">
+                        <i class="fa fa-phone"></i>
+                        <span>Contactos</span>
+                    </a>
+                </li>
+                <li class="header text-center">GESTOR</li>
+                <li class="treeview">
+                    <a href="@Url.Action("Index","Bungalows")">
+                        <i class="fa fa-home"></i> <span>Bungalows</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="@Url.Action("Index","Clientes")">
+                        <i class="fa fa-users"></i>
+                        <span>Clientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Reservas")">
+                        <i class="fa fa-envelope"></i>
+                        <span>Reservas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Simulador")">
+                        <i class="fa fa-calculator"></i>
+                        <span>Calcular Estadia</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Bukubaki</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/Simulador")
+    @Scripts.Render("~/admin-lte/js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

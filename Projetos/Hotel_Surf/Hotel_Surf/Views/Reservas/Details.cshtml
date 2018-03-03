@@ -1,0 +1,75 @@
+﻿@model Hotel_Surf.Models.Reserva
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Reserva</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.DatEntrada)*@
+            @Html.DisplayName("Data de Entrada")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatEntrada)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.DatSaida)*@
+            @Html.DisplayName("Data de Saída")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatSaida)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NumAdultos)*@
+            @Html.DisplayName("Nº de Adultos")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumAdultos)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.NumCriancas)*@
+            @Html.DisplayName("Nº de Crianças")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumCriancas)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Bungalow.TipBung)*@
+            @Html.DisplayName("Tipo de Bungalow")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bungalow.TipBung)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Cliente.ClTitulo)*@
+            @Html.DisplayName("Nome do Cliente")
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.ClNome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.NumReserva }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

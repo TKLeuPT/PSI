@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Hotel_Surf.Models.Reserva>
+
+@{
+    ViewBag.Title = "Início";
+}
+
+<h2>Início</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DatEntrada)*@
+            @Html.DisplayName("Data de Entrada")
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DatSaida)*@
+            @Html.DisplayName("Data de Saída")
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NumAdultos)*@
+            @Html.DisplayName("Nº de Adultos")
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NumCriancas)*@
+            @Html.DisplayName("Nº de Crianças")
+
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Bungalow.TipBung)*@
+            @Html.DisplayName("Tipo de Bungalows")
+
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Cliente.ClTitulo)*@
+            @Html.DisplayName("Nome do Cliente")
+
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatEntrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatSaida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumAdultos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumCriancas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bungalow.TipBung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.ClNome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.NumReserva }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.NumReserva }) |
+            @Html.ActionLink("Apagar", "Delete", new { id=item.NumReserva })
+        </td>
+    </tr>
+}
+
+</table>

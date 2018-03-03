@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BungalowsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BungalowsModelStoreContainer">
+    <EntitySet Name="Bungalows" EntityType="BungalowsModel.Store.Bungalows" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clientes" EntityType="BungalowsModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reservas" EntityType="BungalowsModel.Store.Reservas" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Reservas_Bungalows" Association="BungalowsModel.Store.FK_Reservas_Bungalows">
+      <End Role="Bungalows" EntitySet="Bungalows" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservas_Clientes" Association="BungalowsModel.Store.FK_Reservas_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Reservas" EntitySet="Reservas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bungalows">
+    <Key>
+      <PropertyRef Name="NumBung" />
+    </Key>
+    <Property Name="NumBung" Type="int" Nullable="false" />
+    <Property Name="TipBung" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="PrecoBung" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Reservado" Type="bit" Nullable="false" />
+    <Property Name="NumCamas" Type="int" Nullable="true" />
+    <Property Name="NumPessoas" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="NumCliente" />
+    </Key>
+    <Property Name="NumCliente" Type="int" Nullable="false" />
+    <Property Name="ClTitulo" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="ClNome" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="ClApelido" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="ClEmail" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="NIF" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reservas">
+    <Key>
+      <PropertyRef Name="NumReserva" />
+    </Key>
+    <Property Name="NumReserva" Type="int" Nullable="false" />
+    <Property Name="NumCliente" Type="int" Nullable="false" />
+    <Property Name="DatEntrada" Type="datetime" Nullable="false" />
+    <Property Name="DatSaida" Type="datetime" Nullable="false" />
+    <Property Name="NumAdultos" Type="int" Nullable="false" />
+    <Property Name="NumCriancas" Type="int" Nullable="false" />
+    <Property Name="NumBungRes" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Reservas_Bungalows">
+    <End Role="Bungalows" Type="BungalowsModel.Store.Bungalows" Multiplicity="1" />
+    <End Role="Reservas" Type="BungalowsModel.Store.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bungalows">
+        <PropertyRef Name="NumBung" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="NumBungRes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservas_Clientes">
+    <End Role="Clientes" Type="BungalowsModel.Store.Clientes" Multiplicity="1" />
+    <End Role="Reservas" Type="BungalowsModel.Store.Reservas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="NumCliente" />
+      </Principal>
+      <Dependent Role="Reservas">
+        <PropertyRef Name="NumCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BungalowsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bungalow">
+          <Key>
+            <PropertyRef Name="NumBung" />
+          </Key>
+          <Property Name="NumBung" Type="Int32" Nullable="false" />
+          <Property Name="TipBung" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrecoBung" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Reservado" Type="Boolean" Nullable="false" />
+          <Property Name="NumCamas" Type="Int32" />
+          <Property Name="NumPessoas" Type="Int32" />
+          <NavigationProperty Name="Reservas" Relationship="Self.FK_Reservas_Bungalows" FromRole="Bungalows" ToRole="Reservas" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="NumCliente" />
+          </Key>
+          <Property Name="NumCliente" Type="Int32" Nullable="false" />
+          <Property Name="ClTitulo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClNome" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClApelido" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NIF" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Reservas" Relationship="Self.FK_Reservas_Clientes" FromRole="Clientes" ToRole="Reservas" />
+        </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="NumReserva" />
+          </Key>
+          <Property Name="NumReserva" Type="Int32" Nullable="false" />
+          <Property Name="NumCliente" Type="Int32" Nullable="false" />
+          <Property Name="DatEntrada" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DatSaida" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NumAdultos" Type="Int32" Nullable="false" />
+          <Property Name="NumCriancas" Type="Int32" Nullable="false" />
+          <Property Name="NumBungRes" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bungalow" Relationship="Self.FK_Reservas_Bungalows" FromRole="Reservas" ToRole="Bungalows" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Reservas_Clientes" FromRole="Reservas" ToRole="Clientes" />
+        </EntityType>
+        <Association Name="FK_Reservas_Bungalows">
+          <End Role="Bungalows" Type="Self.Bungalow" Multiplicity="1" />
+          <End Role="Reservas" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bungalows">
+              <PropertyRef Name="NumBung" />
+            </Principal>
+            <Dependent Role="Reservas">
+              <PropertyRef Name="NumBungRes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reservas_Clientes">
+          <End Role="Clientes" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Reservas" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="NumCliente" />
+            </Principal>
+            <Dependent Role="Reservas">
+              <PropertyRef Name="NumCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BungalowsEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bungalows" EntityType="Self.Bungalow" />
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="Reservas" EntityType="Self.Reserva" />
+          <AssociationSet Name="FK_Reservas_Bungalows" Association="Self.FK_Reservas_Bungalows">
+            <End Role="Bungalows" EntitySet="Bungalows" />
+            <End Role="Reservas" EntitySet="Reservas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reservas_Clientes" Association="Self.FK_Reservas_Clientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Reservas" EntitySet="Reservas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BungalowsModelStoreContainer" CdmEntityContainer="BungalowsEntities1">
+    <EntitySetMapping Name="Bungalows">
+      <EntityTypeMapping TypeName="IsTypeOf(BungalowsModel.Bungalow)">
+        <MappingFragment StoreEntitySet="Bungalows">
+          <ScalarProperty Name="NumBung" ColumnName="NumBung" />
+          <ScalarProperty Name="TipBung" ColumnName="TipBung" />
+          <ScalarProperty Name="PrecoBung" ColumnName="PrecoBung" />
+          <ScalarProperty Name="Reservado" ColumnName="Reservado" />
+          <ScalarProperty Name="NumCamas" ColumnName="NumCamas" />
+          <ScalarProperty Name="NumPessoas" ColumnName="NumPessoas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(BungalowsModel.Cliente)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="NumCliente" ColumnName="NumCliente" />
+          <ScalarProperty Name="ClTitulo" ColumnName="ClTitulo" />
+          <ScalarProperty Name="ClNome" ColumnName="ClNome" />
+          <ScalarProperty Name="ClApelido" ColumnName="ClApelido" />
+          <ScalarProperty Name="ClEmail" ColumnName="ClEmail" />
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservas">
+      <EntityTypeMapping TypeName="IsTypeOf(BungalowsModel.Reserva)">
+        <MappingFragment StoreEntitySet="Reservas">
+          <ScalarProperty Name="NumReserva" ColumnName="NumReserva" />
+          <ScalarProperty Name="NumCliente" ColumnName="NumCliente" />
+          <ScalarProperty Name="DatEntrada" ColumnName="DatEntrada" />
+          <ScalarProperty Name="DatSaida" ColumnName="DatSaida" />
+          <ScalarProperty Name="NumAdultos" ColumnName="NumAdultos" />
+          <ScalarProperty Name="NumCriancas" ColumnName="NumCriancas" />
+          <ScalarProperty Name="NumBungRes" ColumnName="NumBungRes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
